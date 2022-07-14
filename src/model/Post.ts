@@ -4,7 +4,6 @@ enum POST_TYPES {
 }
 
 export class Post {
-  
   constructor(
     public id: string,
     public photo: string,

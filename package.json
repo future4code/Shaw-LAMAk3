@@ -8,7 +8,8 @@
     "start": "npm run build && node --inspect ./build/src/index.js",
     "dev": "tsnd ./src/index.ts",
     "build": "clear && echo \"Transpiling files...\" && tsc && echo \"Done!\" ",
-    "test": "jest"
+    "test": "jest",
+    "start-dev":"npx ts-node-dev ./src/index.ts"
   },
   "keywords": [],
   "author": "",
