@@ -24,6 +24,9 @@ connection
       music_genre VARCHAR(255) NOT NULL,
       responsible VARCHAR(255) UNIQUE NOT NULL 
     );
+
+ 
+    
     
     CREATE TABLE IF NOT EXISTS NOME_TABELA_SHOWS (
       id VARCHAR(255) PRIMARY KEY,
