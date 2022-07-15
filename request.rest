@@ -45,8 +45,8 @@ Content-Type: application/json
 
 {
     "week_day":"sabado",
-    "start_time":10,
-    "end_time":11,
+    "start_time":2,
+    "end_time":12,
     "band_id":"001"
 }
 
@@ -56,5 +56,5 @@ Authorization: {{ login.response.body.token }}
 Content-Type: application/json
 
 {
-    "week_day":"sabado"
+    "week_day":"sexta"
 }
