@@ -1,24 +1,27 @@
 import { Request, Response } from "express";
+import BandBusiness from "../business/bandBusiness";
 import { addBandDTO } from "../types/addBandDTO";
 
 export default class  BandController {
 
+    constructor(private bandBusiness: BandBusiness) {}
+
     addBand = async (req: Request, res: Response) =>{
         const token = req.headers.authorization as string
-        const {id, name, music_genre, responsible} = req.body
+        const {name, music_genre, responsible} = req.body
         const input: addBandDTO = {
             name,
             music_genre,
             responsible
           }
         try {
-        const token = await this.bandBusiness.signup(input);
-        res.status(201).send({ message: "Usuário criado com sucesso", token });
+        const result = await this.bandBusiness.addBand(input, token);
+        res.status(201).send({ message: "Banda criada com sucesso", token });
         } catch (error) {
         if (error instanceof Error) {
             return res.status(400).send(error.message);
         }
-        res.status(500).send("Erro no signup");
+        res.status(500).send("Erro ao criar a banda");
         }
     }
 
