@@ -1,16 +1,17 @@
 export enum WEEK_DAYS {
-SEXTA ="sexta",
-SABADO ="sabado",
-DOMINGO = "domingo"
+    SEXTA = "sexta",
+    SABADO = "sabado",
+    DOMINGO = "domingo"
 }
 
 
 export class Show {
     constructor(
-        private id: string,
-        private week_day: WEEK_DAYS,
-        private start_time: number,
-        private end_time: number,
-        private band_id: string,
+        public id: string,
+        public week_day: WEEK_DAYS,
+        public start_time: number,
+        public end_time: number,
+        public band_id: string,
     ) { }
-}
+
+} 

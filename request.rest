@@ -45,7 +45,16 @@ Content-Type: application/json
 
 {
     "week_day":"sabado",
-    "start_time":22,
-    "end_time":23,
+    "start_time":10,
+    "end_time":11,
     "band_id":"001"
+}
+
+####
+GET http://localhost:3003/shows
+Authorization: {{ login.response.body.token }}
+Content-Type: application/json
+
+{
+    "week_day":"sabado"
 }

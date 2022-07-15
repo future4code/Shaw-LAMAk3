@@ -28,6 +28,7 @@ const showBusiness = new ShowBusiness(
 );
 const showController = new ShowController(showBusiness)
 app.post("/shows", showController.addShow)
+app.get("/shows",showController.getShowByDate)
 
 
 
