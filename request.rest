@@ -38,17 +38,37 @@ Authorization: {{ login.response.body.token }}
 GET http://localhost:3003/post/list
 Authorization: {{ login.response.body.token }}
 
+
 ##############
 POST http://localhost:3003/shows
 Authorization: {{ login.response.body.token }}
 Content-Type: application/json
 
 {
+
     "week_day":"sabado",
     "start_time":2,
     "end_time":12,
-    "band_id":"001"
+    "band_id":"001
+    }
+
+###
+POST http://localhost:3003/band
+
+Authorization: {{ login.response.body.token }}
+Content-Type: application/json
+
+{
+    "name": "",
+    "music_genre": "Pagode",
+    "responsible": "Duzão"
 }
+
+###
+GET http://localhost:3003/banda/5e25beb7-5ef7-45b8-9119-c2944ca13824
+Authorization: {{ login.response.body.token }}
+
+
 
 ####
 GET http://localhost:3003/shows
