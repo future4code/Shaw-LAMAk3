@@ -1,5 +1,5 @@
 import BandData from "../data/BandData";
-import { Band } from "../model/Band";
+import { Band, GetBandInterface } from "../model/Band";
 import { Authenticator } from "../services/Authenticator";
 import { IdGenerator } from "../services/IdGenerator";
 import { addBandDTO } from "../types/addBandDTO";
@@ -38,4 +38,14 @@ export default class BandBusiness {
     //retornar o post
     return band;
   };
+
+  getBand = async (id: string, token: string) => {
+    const tokenData = this.authenticator.getTokenData(token)
+
+    if (!tokenData) {
+        throw new Error("Token não existe");
+      }
+    const result = await this.bandData.select(id)
+    return result
+};
 }

@@ -42,3 +42,9 @@ export enum USER_ROLES {
    ADMIN = "ADMIN",
 }
 
+export interface GetBandInterface {
+   name:string
+   music_genre:string
+   responsible:string
+}
+
