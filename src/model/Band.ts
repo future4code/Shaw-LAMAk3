@@ -6,7 +6,6 @@ export class Band {
       private name: string,
       private music_genre: string,
       private responsible: string,
-      private role: USER_ROLES
    ) { }
 
    public getId(): string {
@@ -25,9 +24,6 @@ export class Band {
       return this.responsible;
    }
 
-   public getRole(): USER_ROLES {
-      return this.role;
-   }
 }
 
 export const stringToUserRole = (input: string): USER_ROLES => {

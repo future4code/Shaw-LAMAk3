@@ -11,6 +11,6 @@ export class Post {
     public description: string,
     public type: POST_TYPES,
     public created_at: string,
-    public author_id: string
+    public author_id: string  
   ) {}
 }
