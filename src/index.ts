@@ -30,17 +30,7 @@ const postBusiness = new PostBusiness(
 const postController = new PostController(postBusiness);
 
 
-//criação da banda -- início
-const bandBusiness = new BandBusiness(
-  new BandData(),
-  new IdGenerator(),
-  new Authenticator()
-)
 
-const bandController = new BandController(bandBusiness)
-
-app.post("/band", bandController.addBand)
-// -- fim --
 
 app.post("/user/signup", userController.signup);
 app.post("/user/login", userController.login);
@@ -49,4 +39,15 @@ app.get("/post/list", postController.postList);
 app.get("/post/:id", postController.postById);
 
 
+//criação da banda -- início
+const bandBusiness = new BandBusiness(
+  new BandData(),
+  new IdGenerator(),
+  new Authenticator()
+)
+const bandController = new BandController(bandBusiness)
+app.post("/band", bandController.addBand)
+// -- fim --
 
+// pegar uma banda por id ou nome
+app.get("/banda/:id", bandController.getBand)

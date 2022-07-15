@@ -15,7 +15,7 @@ export default class  BandController {
             responsible
           }
         try {
-        const result = await this.bandBusiness.addBand(input, token);
+        await this.bandBusiness.addBand(input, token);
         res.status(201).send({ message: "Banda criada com sucesso", token });
         } catch (error) {
         if (error instanceof Error) {
@@ -23,6 +23,22 @@ export default class  BandController {
         }
         res.status(500).send("Erro ao criar a banda");
         }
+    }
+
+    getBand = async (req: Request, res: Response) =>{
+        const token = req.headers.authorization as string
+        const {id} = req.params
+
+        try {
+            const result = await this.bandBusiness.getBand(id, token);
+            res.status(201).send({ result });
+            } catch (error) {
+            if (error instanceof Error) {
+                return res.status(400).send(error.message);
+            }
+            res.status(500).send("Não encontramos essa banda");
+            }
+
     }
 
 
