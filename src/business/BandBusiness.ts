@@ -1,7 +1,7 @@
 import BandData from "../data/BandData";
 import { Band, GetBandInterface } from "../model/Band";
 import { Authenticator } from "../services/Authenticator";
-import { IdGenerator } from "../services/IdGenerator";
+import { IdGenerator } from "../services/idGenerator";
 import { addBandDTO } from "../types/addBandDTO";
 
 export default class BandBusiness {
@@ -14,9 +14,9 @@ export default class BandBusiness {
       addBand = async (input: addBandDTO, token: string) => {
         const { name, music_genre, responsible } = input;
 
-        if (!name || !music_genre || !responsible) {
+       /*  if (!name || !music_genre || !responsible) {
             throw new Error("Preencha todos os campos");
-          }
+          } */
       
           //fazer um id para o post
         const id = this.idGenerator.generate();

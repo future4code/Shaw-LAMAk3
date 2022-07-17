@@ -21,7 +21,7 @@ Content-Type: application/json
     "password": "123456"
 }
 
-##############
+########CRIAR-SHOW
 POST http://localhost:3003/shows
 Authorization: {{ login.response.body.token }}
 Content-Type: application/json
@@ -29,30 +29,12 @@ Content-Type: application/json
 {
 
     "week_day":"sabado",
-    "start_time":2,
+    "start_time":8,
     "end_time":12,
-    "band_id":"001
+    "band_id":"001"
     }
 
-###
-POST http://localhost:3003/band
-
-Authorization: {{ login.response.body.token }}
-Content-Type: application/json
-
-{
-    "name": "Fatalmente",
-    "music_genre": "Pagode",
-    "responsible": "Rodriguinho"
-}
-
-###
-GET http://localhost:3003/banda/5e25beb7-5ef7-45b8-9119-c2944ca13824
-Authorization: {{ login.response.body.token }}
-
-
-
-####
+########PEGAR-SHOWS-POR-DIA
 GET http://localhost:3003/shows
 Authorization: {{ login.response.body.token }}
 Content-Type: application/json
@@ -60,3 +42,21 @@ Content-Type: application/json
 {
     "week_day":"sexta"
 }
+
+########CRIAR-BANDA
+POST http://localhost:3003/band
+Authorization: {{ login.response.body.token }}
+Content-Type: application/json
+
+{
+    "name": "Fatalmente",
+    "music_genre": "Pagode",
+    "responsible": "SERVULO"
+}
+
+########PEGAR-BANDA
+GET http://localhost:3003/banda/5e25beb7-5ef7-45b8-9119-c2944ca13824
+Authorization: {{ login.response.body.token }}
+
+
+

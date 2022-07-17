@@ -3,7 +3,7 @@ import PostData from "../data/PostData";
 import { Post } from "../model/Post";
 import { Authenticator } from "../services/Authenticator";
 import { createPostDTO } from "../types/creatPostDTO";
-import { IdGenerator } from "../services/IdGenerator"
+import { IdGenerator } from "../services/idGenerator"
 
 export default class PostBusiness {
   //injeção de dependência
