@@ -2,7 +2,7 @@ import { weekdays } from "moment";
 import ShowData from "../data/ShowData";
 import { Show, WEEK_DAYS } from "../model/Show";
 import { Authenticator } from "../services/Authenticator";
-import { IdGenerator } from "../services/IdGenerator";
+import { IdGenerator } from "../services/idGenerator";
 import { createShowDTO } from "../types/createShowDTO";
 
 export default class ShowBusiness {

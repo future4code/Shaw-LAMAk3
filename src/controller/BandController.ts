@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import BandBusiness from "../business/bandBusiness";
+import BandBusiness from "../business/BandBusiness";
 import { addBandDTO } from "../types/addBandDTO";
 
 export default class  BandController {
